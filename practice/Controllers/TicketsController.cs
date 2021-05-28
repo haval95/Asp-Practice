@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using practice.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,12 +34,11 @@ namespace practice.Controllers
         }
 
         [HttpPost]
-    
-        public IActionResult Post()
-        {
-            return Ok("Creating A ticket ");
-        }
 
+        public IActionResult Post([FromBody] Ticket tiket)
+        {
+            return Ok(tiket);
+        }
         [HttpPut]
      
         public IActionResult Put()

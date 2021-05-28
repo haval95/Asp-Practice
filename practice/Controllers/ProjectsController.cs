@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using practice.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,16 +27,16 @@ namespace practice.Controllers
 
         // POST api/<ProjectsController>
         [HttpPost]
-        public IActionResult Post()
+        public IActionResult Post([FromBody] Ticket tiket)
         {
-            return Ok("Creating A Project ");
+            return Ok(tiket);
         }
 
         [HttpPut]
 
-        public IActionResult Put()
+        public IActionResult Put(int id, [FromBody] Ticket tiket)
         {
-            return Ok("Updating A Projects ");
+            return Ok(tiket);
         }
 
 
@@ -43,7 +44,7 @@ namespace practice.Controllers
 
         public IActionResult Delete(int id)
         {
-            return Ok($"deleting one project: #{id} ");
+            return Ok($"deleting one project: #{id}");
         }
 
         [HttpGet]
