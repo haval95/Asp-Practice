@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿/*using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using practice.Model;
 using System;
@@ -24,3 +24,4 @@ namespace practice.Filtters
         }
     }
 }
+*/

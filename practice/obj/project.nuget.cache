@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "wjp1MQeQvldkrG3EYnj1quE0yQGGm89nAytENFbOrBFruoXChX0U5A6szJOATRTlDqnE95RrMn50xlhblNzxzw==",
+  "dgSpecHash": "CnvH5ZY+hBe4fFQGEdW21DhWv+IkNS9lvEjPfP9reX803juEhvdabc37ybk7H7Vkjz3yMyJkPjLuv9hkmVYIcA==",
   "success": true,
   "projectFilePath": "C:\\Users\\A\\source\\repos\\Asp-Practice\\practice\\practice.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\A\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

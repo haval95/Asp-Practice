@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using practice.Filtters;
+//using practice.Filtters;
 using practice.Model;
 using System;
 using System.Collections.Generic;
@@ -44,7 +44,7 @@ namespace practice.Controllers
 
         [HttpPost]
         [Route("/api/v2/tickets")]
-        [Ticket_EnsureEnterDate]
+       // [Ticket_EnsureEnterDate]
         public IActionResult PostV2([FromBody] Ticket tiket)
         {
             return Ok(tiket);
