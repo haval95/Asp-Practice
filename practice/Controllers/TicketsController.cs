@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using practice.Filtters;
 using practice.Model;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace practice.Controllers
     //Adding the this will help us remove most of the routs that have the controler name
     [Route("api/[controller]")]
     //HVL we need to inhirit from controllerBase 
+    [Version1StoppingResourceFilter]
     public class TicketsController: ControllerBase
     {
 
@@ -36,6 +38,14 @@ namespace practice.Controllers
         [HttpPost]
 
         public IActionResult Post([FromBody] Ticket tiket)
+        {
+            return Ok(tiket);
+        }
+
+        [HttpPost]
+        [Route("/api/v2/tickets")]
+        [Ticket_EnsureEnterDate]
+        public IActionResult PostV2([FromBody] Ticket tiket)
         {
             return Ok(tiket);
         }

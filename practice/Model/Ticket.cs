@@ -19,6 +19,7 @@ namespace practice.Model
         public string  Owner { get; set; }
         [Ticket_DueDateIsNotInPast]
         [Ticket_EnsureDueDateForTicketOwner]
-        public DateTime? DueDate { get; set; }    
+        public DateTime? DueDate { get; set; }
+        public DateTime? EnterDate { get; set; }
     }
 }
