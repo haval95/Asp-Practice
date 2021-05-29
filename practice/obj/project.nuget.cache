@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6OpPSj1JQcmXxOsMdsttskR5JHuoxUm/lj+Z2TZMdSajxFJDhfx+2FEUaV+KlVGxGr6rrBfpiJrkNblHAm4A7w==",
+  "dgSpecHash": "wjp1MQeQvldkrG3EYnj1quE0yQGGm89nAytENFbOrBFruoXChX0U5A6szJOATRTlDqnE95RrMn50xlhblNzxzw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\A\\source\\repos\\practice\\practice\\practice.csproj",
+  "projectFilePath": "C:\\Users\\A\\source\\repos\\Asp-Practice\\practice\\practice.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

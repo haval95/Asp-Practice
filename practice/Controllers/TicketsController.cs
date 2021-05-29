@@ -15,7 +15,7 @@ namespace practice.Controllers
     //Adding the this will help us remove most of the routs that have the controler name
     [Route("api/[controller]")]
     //HVL we need to inhirit from controllerBase 
-    [Version1StoppingResourceFilter]
+   // [Version1StoppingResourceFilter]
     public class TicketsController: ControllerBase
     {
 

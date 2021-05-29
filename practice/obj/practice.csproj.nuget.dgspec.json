@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\A\\source\\repos\\practice\\practice\\practice.csproj": {}
+    "C:\\Users\\A\\source\\repos\\Asp-Practice\\practice\\practice.csproj": {}
   },
   "projects": {
-    "C:\\Users\\A\\source\\repos\\practice\\practice\\practice.csproj": {
+    "C:\\Users\\A\\source\\repos\\Asp-Practice\\practice\\practice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\A\\source\\repos\\practice\\practice\\practice.csproj",
+        "projectUniqueName": "C:\\Users\\A\\source\\repos\\Asp-Practice\\practice\\practice.csproj",
         "projectName": "practice",
-        "projectPath": "C:\\Users\\A\\source\\repos\\practice\\practice\\practice.csproj",
+        "projectPath": "C:\\Users\\A\\source\\repos\\Asp-Practice\\practice\\practice.csproj",
         "packagesPath": "C:\\Users\\A\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\A\\source\\repos\\practice\\practice\\obj\\",
+        "outputPath": "C:\\Users\\A\\source\\repos\\Asp-Practice\\practice\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\A\\AppData\\Roaming\\NuGet\\NuGet.Config",
