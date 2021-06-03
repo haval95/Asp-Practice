@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 //using practice.Filtters;
-using practice.Model;
-using System;
-using System.Collections.Generic;
+using Core.Model;
+using DataStore.EF;
 using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace practice.Controllers
 {
@@ -18,28 +17,43 @@ namespace practice.Controllers
    // [Version1StoppingResourceFilter]
     public class TicketsController: ControllerBase
     {
+        private readonly BugsContext _db;
 
+        public TicketsController(BugsContext db)
+        {
+            _db = db;
+        }
         [HttpGet]
        // [Route("api/tickets")] we have this if we dont have the route for the class 
        
         public IActionResult Get()
         {
-            return Ok("reading all the tickets" );
+            var tickets = _db.Tickets.ToList();
+            return Ok(tickets);
 
         }
 
         [HttpGet("{id}")]
        // [Route("api/ticket/{id}")] we would need this without the class route but now we can remove this and the ID to the Http verb attribute 
-        public IActionResult Get(int id)
+        public IActionResult GetById(int id)
         {
-            return Ok($"Reading one ticket: #{id} ");
+            var ticket = _db.Tickets.Find(id);
+            if(ticket == null)
+            {
+                return NotFound();
+            }
+            return Ok(ticket);
         }
 
         [HttpPost]
 
         public IActionResult Post([FromBody] Ticket tiket)
         {
-            return Ok(tiket);
+
+            _db.Tickets.Add(tiket);
+            _db.SaveChanges();
+            return CreatedAtAction(nameof(GetById),
+                new { id= tiket.TicketId },tiket) ;
         }
 
         [HttpPost]
@@ -49,11 +63,26 @@ namespace practice.Controllers
         {
             return Ok(tiket);
         }
-        [HttpPut]
+        [HttpPut("{id}")]
      
-        public IActionResult Put()
+        public IActionResult Put(int Id,[FromBody] Ticket tiket)
         {
-            return Ok("Updating A ticket ");
+            if (tiket.TicketId != Id) return BadRequest();
+
+            _db.Entry(tiket).State = EntityState.Modified;
+
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch
+            {
+                if (_db.Tickets.Find(Id) == null) 
+                    return NotFound();
+                throw;
+            }
+
+            return NoContent();
         }
 
 
@@ -61,7 +90,12 @@ namespace practice.Controllers
       
         public IActionResult Delete(int id )
         {
-            return Ok($"deleting one ticket: #{id} ");
+            var ticket = _db.Tickets.Find(id);
+
+            if (ticket == null) return NotFound();
+            _db.Tickets.Remove(ticket);
+            _db.SaveChanges();
+            return Ok();
         }
     }
 }

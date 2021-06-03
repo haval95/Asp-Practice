@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.ComponentModel.DataAnnotations;
-using practice.Model;
-
+﻿using System.ComponentModel.DataAnnotations;
+using Core.Model;
 namespace Core.ValidationAttributes
 {
     public class Ticket_EnsureDueDatePresentAttiute : ValidationAttribute
@@ -18,7 +14,7 @@ namespace Core.ValidationAttributes
                 return new ValidationResult("Due date Required.");
             }
 
-            return ValidationResult.Success;
+            return ValidationResult.Success; 
 
         }
     }

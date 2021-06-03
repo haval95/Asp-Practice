@@ -6,19 +6,23 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace practice.Model
+namespace Core.Model
 
 {
     public class Ticket
     {
-        public int? Id { get; set; }
-        public string  Name { get; set; }
-        [Required]
-        public string Title { get; set; }
+        public int? TicketId { get; set; }
         [Required]
         public int? ProjectId { get; set; }
 
+        public string  Name { get; set; }
         [Required]
+        [StringLength(100)]
+        public string Title { get; set; }
+
+        public String Description { get; set; }
+
+        [StringLength(50)]
         public string  Owner { get; set; }
         [Ticket_EnsureReportDatePresentAttibute]
         public DateTime? ReportDate { get; set; }
@@ -27,7 +31,8 @@ namespace practice.Model
         [Ticket_EnsureDueDateAfterReportDateAttibute]
         public DateTime? DueDate { get; set; }
 
-      //  public Project Project { get; set; }
+        //this is called navigation property
+        public Project Project { get; set; }
 
         /// <summary>
         /// When Creating a ticket, if due date is entered it has to be in the future. 
@@ -35,7 +40,7 @@ namespace practice.Model
       
         public bool ValidateFutureDueDate()
         {
-            if (Id.HasValue) return true;
+            if (TicketId.HasValue) return true;
             if (!DueDate.HasValue) return true;
 
             return (DueDate.Value > DateTime.Now);

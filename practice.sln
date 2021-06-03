@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "practice", "practice\practice.csproj", "{60D30A90-BECB-4E9E-ADB3-7609504065A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{EE667AAD-E9BC-47C4-8DF4-5EC59A3D848F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{EE667AAD-E9BC-47C4-8DF4-5EC59A3D848F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStore.EF", "DataStore.EF\DataStore.EF.csproj", "{FA260D32-BCFC-43D7-8216-76DC51DBE419}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{EE667AAD-E9BC-47C4-8DF4-5EC59A3D848F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE667AAD-E9BC-47C4-8DF4-5EC59A3D848F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE667AAD-E9BC-47C4-8DF4-5EC59A3D848F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA260D32-BCFC-43D7-8216-76DC51DBE419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA260D32-BCFC-43D7-8216-76DC51DBE419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA260D32-BCFC-43D7-8216-76DC51DBE419}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA260D32-BCFC-43D7-8216-76DC51DBE419}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

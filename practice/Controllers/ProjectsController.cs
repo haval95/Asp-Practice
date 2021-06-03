@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using practice.Model;
+﻿using Core.Model;
+using DataStore.EF;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
 //using practice.Model;
-using System;
-using System.Collections.Generic;
+
 using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace practice.Controllers
 {
@@ -12,32 +14,61 @@ namespace practice.Controllers
     [ApiController]
     public class ProjectsController : ControllerBase
     {
+        private readonly BugsContext _db;
+        public ProjectsController(BugsContext db)
+        {
+            _db = db;
+        }
         // GET: api/<ProjectsController>
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok("Get all Projects ");
+            return Ok(_db.Projects.ToList());
         }
 
         // GET api/<ProjectsController>/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult GetById(int id)
         {
-            return Ok($"Reading  project: #{id} ");
+            var project = _db.Projects.Find(id);
+            if(project == null)
+            {
+                return NotFound();
+            }
+            return Ok(project);
         }
 
         // POST api/<ProjectsController>
         [HttpPost]
-        public IActionResult Post([FromBody] Ticket tiket)
+        public IActionResult Post([FromBody] Project  project)
         {
-            return Ok(tiket);
+            _db.Projects.Add(project);
+            _db.SaveChanges();
+
+            return CreatedAtAction(nameof(GetById), new { id = project.ProjectId }, project);
+          
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
 
-        public IActionResult Put(int id, [FromBody] Ticket tiket)
+        public IActionResult Put(int id, [FromBody] Project project)
         {
-            return Ok(tiket);
+
+            if (project.ProjectId != id) return BadRequest();
+
+            _db.Entry(project).State = EntityState.Modified;
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch
+            {
+                if (_db.Projects.Find(id) == null)
+                    return NotFound();
+                throw;
+            }
+
+            return NoContent();
         }
 
 
@@ -45,15 +76,29 @@ namespace practice.Controllers
 
         public IActionResult Delete(int id)
         {
-            return Ok($"deleting one project: #{id}");
+            var project = _db.Projects.Find(id);
+            if (project != null)
+            {
+                _db.Projects.Remove(project);
+                _db.SaveChanges();
+                return Ok();
+            }
+
+            return NotFound();
+         
         }
 
         [HttpGet]
         //here we overwrite the class route by re-initiating the route, BUT we need to have the first / otherwise its going to be added after the class route 
         [Route("/api/projects/{pid}/tickets")]
-        public IActionResult GetProjectTicket (int pid, int tid)
+        public IActionResult GetProjectTicket (int pid)
         {
-            return Ok($"project number #{pid} and ticket number #{tid}");
+            var tickets = _db.Tickets.Where(t => t.ProjectId == pid).ToList();
+            if(tickets.Count == 0)
+            {
+                return NotFound();
+            }
+            return Ok(tickets);
 
         }
 

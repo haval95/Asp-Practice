@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 using System.ComponentModel.DataAnnotations;
-using practice.Model;
+using Core.Model;
 
 namespace Core.ValidationAttributes
 {

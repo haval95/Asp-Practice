@@ -1,0 +1,12 @@
+C:\Users\A\source\repos\Asp-Practice\DataStore.EF\obj\Debug\netstandard2.0\DataStore.EF.csprojAssemblyReference.cache
+C:\Users\A\source\repos\Asp-Practice\DataStore.EF\obj\Debug\netstandard2.0\DataStore.EF.AssemblyInfoInputs.cache
+C:\Users\A\source\repos\Asp-Practice\DataStore.EF\obj\Debug\netstandard2.0\DataStore.EF.AssemblyInfo.cs
+C:\Users\A\source\repos\Asp-Practice\DataStore.EF\obj\Debug\netstandard2.0\DataStore.EF.csproj.CoreCompileInputs.cache
+C:\Users\A\source\repos\Asp-Practice\DataStore.EF\bin\Debug\netstandard2.0\DataStore.EF.deps.json
+C:\Users\A\source\repos\Asp-Practice\DataStore.EF\bin\Debug\netstandard2.0\DataStore.EF.dll
+C:\Users\A\source\repos\Asp-Practice\DataStore.EF\bin\Debug\netstandard2.0\DataStore.EF.pdb
+C:\Users\A\source\repos\Asp-Practice\DataStore.EF\bin\Debug\netstandard2.0\Core.dll
+C:\Users\A\source\repos\Asp-Practice\DataStore.EF\bin\Debug\netstandard2.0\Core.pdb
+C:\Users\A\source\repos\Asp-Practice\DataStore.EF\obj\Debug\netstandard2.0\DataStore.EF.csproj.CopyComplete
+C:\Users\A\source\repos\Asp-Practice\DataStore.EF\obj\Debug\netstandard2.0\DataStore.EF.dll
+C:\Users\A\source\repos\Asp-Practice\DataStore.EF\obj\Debug\netstandard2.0\DataStore.EF.pdb
